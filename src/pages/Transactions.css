@@ -371,6 +371,7 @@
     width: 100%;
     overflow-x: auto;
     padding-bottom: 0.25rem;
+    display: flex;
   }
 
   .filter-tab {
@@ -397,10 +398,25 @@
   }
 
   /* Hide less important columns on mobile */
+  .transactions-table th:nth-child(3),
+  .transactions-table td:nth-child(3),
   .transactions-table th:nth-child(4),
   .transactions-table td:nth-child(4),
   .transactions-table th:nth-child(6),
   .transactions-table td:nth-child(6) {
     display: none;
+  }
+
+  .transactions-table td {
+    white-space: normal;
+    word-break: break-word;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .transactions-table th,
+  .transactions-table td {
+    padding: 1rem 0.75rem;
+    font-size: 0.875rem;
   }
 }
