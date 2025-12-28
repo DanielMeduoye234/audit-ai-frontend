@@ -1,0 +1,266 @@
+.insights-panel {
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.05) 0%,
+    rgba(168, 85, 247, 0.05) 100%
+  );
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.insights-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.insights-header .header-icon {
+  width: 24px;
+  height: 24px;
+  color: #6366f1;
+}
+
+.insights-header h3 {
+  flex: 1;
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.refresh-button {
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  color: #6366f1;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.refresh-button:hover {
+  background: rgba(99, 102, 241, 0.2);
+  transform: rotate(180deg);
+}
+
+/* Loading State */
+.insights-loading {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(99, 102, 241, 0.2);
+  border-top-color: #6366f1;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 16px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error State */
+.insights-error {
+  text-align: center;
+  padding: 40px 20px;
+  color: #f87171;
+}
+
+.insights-error svg {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 12px;
+}
+
+.retry-button {
+  margin-top: 16px;
+  padding: 8px 20px;
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  color: #f87171;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.retry-button:hover {
+  background: rgba(248, 113, 113, 0.2);
+}
+
+/* Empty State */
+.insights-empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.empty-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 12px;
+  opacity: 0.5;
+}
+
+.empty-subtitle {
+  display: block;
+  font-size: 0.875rem;
+  margin-top: 8px;
+  opacity: 0.7;
+}
+
+/* Insights List */
+.insights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.insight-item {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border-left: 3px solid;
+  transition: all 0.3s ease;
+}
+
+.insight-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateX(4px);
+}
+
+.insight-item.opportunity {
+  border-left-color: #10b981;
+}
+
+.insight-item.warning {
+  border-left-color: #f59e0b;
+}
+
+.insight-item.info {
+  border-left-color: #6366f1;
+}
+
+.insight-icon-wrapper {
+  flex-shrink: 0;
+}
+
+.insight-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.insight-icon.opportunity {
+  color: #10b981;
+}
+
+.insight-icon.warning {
+  color: #f59e0b;
+}
+
+.insight-icon.info {
+  color: #6366f1;
+}
+
+.insight-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.insight-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.insight-title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.insight-impact {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6366f1;
+  background: rgba(99, 102, 241, 0.1);
+  padding: 4px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.insight-description {
+  margin: 0 0 8px 0;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+.insight-recommendation {
+  margin-top: 12px;
+  padding: 12px;
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+}
+
+.insight-recommendation strong {
+  color: #6366f1;
+}
+
+/* Footer */
+.insights-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.insights-count {
+  margin: 0;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.view-all-link {
+  color: #6366f1;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.view-all-link:hover {
+  color: #818cf8;
+  transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .insight-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .insight-impact {
+    align-self: flex-start;
+  }
+}

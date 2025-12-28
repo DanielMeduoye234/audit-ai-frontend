@@ -1,0 +1,151 @@
+Date,Description,Category,Type,Amount
+2025-10-27,Insurance Payment,Insurance,expense,159.05
+2025-12-01,Interest Income - Client 25,Interest Income,income,9735.13
+2025-11-24,Marketing Ads Payment,Marketing Ads,expense,1986.84
+2025-11-24,Consulting Services - Client 47,Consulting Services,income,6533.51
+2025-07-15,Insurance Payment,Insurance,expense,1283.6
+2025-09-10,Insurance Payment,Insurance,expense,220.77
+2025-10-30,Insurance Payment,Insurance,expense,1956.37
+2025-08-28,Sales Revenue - Client 84,Sales Revenue,income,8805.08
+2025-12-15,Interest Income - Client 40,Interest Income,income,8353.37
+2025-12-09,Marketing Ads Payment,Marketing Ads,expense,1573.2
+2025-06-29,Software Licenses Payment,Software Licenses,expense,1860.37
+2025-07-20,Legal Fees Payment,Legal Fees,expense,859.89
+2025-08-11,Subscription Fees - Client 20,Subscription Fees,income,13422.98
+2025-09-01,Software Licenses Payment,Software Licenses,expense,1609.08
+2025-08-01,Consulting Services - Client 9,Consulting Services,income,2015.51
+2025-08-07,Interest Income - Client 61,Interest Income,income,8972.5
+2025-12-13,Travel Expenses Payment,Travel Expenses,expense,1704.53
+2025-10-16,Legal Fees Payment,Legal Fees,expense,824.9
+2025-11-16,Office Supplies Payment,Office Supplies,expense,625.8
+2025-10-04,Subscription Fees - Client 19,Subscription Fees,income,7255.43
+2025-11-07,Consulting Services - Client 49,Consulting Services,income,4832.97
+2025-09-05,Cloud Infrastructure (AWS) Payment,Cloud Infrastructure (AWS),expense,337.88
+2025-10-24,Marketing Ads Payment,Marketing Ads,expense,1127.17
+2025-09-17,Interest Income - Client 80,Interest Income,income,1516.01
+2025-08-03,Employee Salaries Payment,Employee Salaries,expense,8500
+2025-07-30,Office Supplies Payment,Office Supplies,expense,860.65
+2025-11-05,Software Licenses Payment,Software Licenses,expense,1719.88
+2025-11-25,Marketing Ads Payment,Marketing Ads,expense,407.13
+2025-08-31,Office Rent Payment,Office Rent,expense,3500
+2025-08-03,Travel Expenses Payment,Travel Expenses,expense,326.38
+2025-11-01,Insurance Payment,Insurance,expense,718.77
+2025-11-05,Utilities Payment,Utilities,expense,1389.11
+2025-07-08,Subscription Fees - Client 44,Subscription Fees,income,14121.86
+2025-08-06,Cloud Infrastructure (AWS) Payment,Cloud Infrastructure (AWS),expense,156.84
+2025-06-16,Cloud Infrastructure (AWS) Payment,Cloud Infrastructure (AWS),expense,1153.47
+2025-09-04,Interest Income - Client 31,Interest Income,income,10365.78
+2025-12-13,Sales Revenue - Client 22,Sales Revenue,income,14860.83
+2025-07-06,Sales Revenue - Client 86,Sales Revenue,income,13838.32
+2025-09-16,Office Rent Payment,Office Rent,expense,3500
+2025-09-05,Sales Revenue - Client 53,Sales Revenue,income,12758.95
+2025-07-17,Marketing Ads Payment,Marketing Ads,expense,113.35
+2025-10-06,Legal Fees Payment,Legal Fees,expense,648.13
+2025-08-28,Legal Fees Payment,Legal Fees,expense,1691.92
+2025-06-20,Travel Expenses Payment,Travel Expenses,expense,195.15
+2025-10-06,Interest Income - Client 35,Interest Income,income,2134.69
+2025-08-18,Sales Revenue - Client 83,Sales Revenue,income,11270.55
+2025-10-26,Cloud Infrastructure (AWS) Payment,Cloud Infrastructure (AWS),expense,120.45
+2025-11-04,Consulting Services - Client 14,Consulting Services,income,6078.65
+2025-10-25,Insurance Payment,Insurance,expense,1783.72
+2025-11-14,Consulting Services - Client 41,Consulting Services,income,8363.37
+2025-09-21,Subscription Fees - Client 73,Subscription Fees,income,1509.64
+2025-09-04,Marketing Ads Payment,Marketing Ads,expense,1946.59
+2025-07-16,Marketing Ads Payment,Marketing Ads,expense,998.87
+2025-09-16,Insurance Payment,Insurance,expense,286.45
+2025-10-05,Interest Income - Client 81,Interest Income,income,10451.77
+2025-07-31,Subscription Fees - Client 18,Subscription Fees,income,9096.36
+2025-11-13,Employee Salaries Payment,Employee Salaries,expense,8500
+2025-08-16,Consulting Services - Client 31,Consulting Services,income,4741.79
+2025-10-06,Software Licenses Payment,Software Licenses,expense,914.08
+2025-08-13,Software Licenses Payment,Software Licenses,expense,818.35
+2025-08-11,Employee Salaries Payment,Employee Salaries,expense,8500
+2025-10-27,Marketing Ads Payment,Marketing Ads,expense,374.98
+2025-06-25,Marketing Ads Payment,Marketing Ads,expense,749.68
+2025-10-06,Legal Fees Payment,Legal Fees,expense,1448.54
+2025-08-31,Legal Fees Payment,Legal Fees,expense,145.24
+2025-11-16,Employee Salaries Payment,Employee Salaries,expense,8500
+2025-07-29,Consulting Services - Client 35,Consulting Services,income,14589.5
+2025-10-25,Software Licenses Payment,Software Licenses,expense,674.48
+2025-11-18,Office Supplies Payment,Office Supplies,expense,1109.62
+2025-09-16,Insurance Payment,Insurance,expense,1668.16
+2025-07-12,Sales Revenue - Client 56,Sales Revenue,income,1792.62
+2025-08-13,Consulting Services - Client 90,Consulting Services,income,11492.73
+2025-09-23,Consulting Services - Client 7,Consulting Services,income,10114.66
+2025-11-04,Travel Expenses Payment,Travel Expenses,expense,1875.24
+2025-08-28,Utilities Payment,Utilities,expense,621.94
+2025-09-16,Office Supplies Payment,Office Supplies,expense,1777.3
+2025-09-25,Utilities Payment,Utilities,expense,1373.12
+2025-08-11,Travel Expenses Payment,Travel Expenses,expense,1399.2
+2025-08-03,Employee Salaries Payment,Employee Salaries,expense,8500
+2025-10-27,Sales Revenue - Client 19,Sales Revenue,income,5935.74
+2025-09-12,Legal Fees Payment,Legal Fees,expense,1330.25
+2025-12-14,Software Licenses Payment,Software Licenses,expense,1788.29
+2025-09-25,Interest Income - Client 96,Interest Income,income,7016.34
+2025-09-23,Software Licenses Payment,Software Licenses,expense,631.66
+2025-11-22,Legal Fees Payment,Legal Fees,expense,328.89
+2025-08-13,Travel Expenses Payment,Travel Expenses,expense,1071.7
+2025-08-27,Legal Fees Payment,Legal Fees,expense,386.22
+2025-12-05,Software Licenses Payment,Software Licenses,expense,1486.19
+2025-10-19,Sales Revenue - Client 11,Sales Revenue,income,13338.87
+2025-12-06,Interest Income - Client 53,Interest Income,income,14686.59
+2025-07-02,Sales Revenue - Client 86,Sales Revenue,income,7282.82
+2025-07-09,Office Rent Payment,Office Rent,expense,3500
+2025-08-16,Sales Revenue - Client 84,Sales Revenue,income,13113.31
+2025-07-14,Insurance Payment,Insurance,expense,295.62
+2025-11-06,Interest Income - Client 61,Interest Income,income,1077.8
+2025-07-18,Consulting Services - Client 11,Consulting Services,income,4281.26
+2025-09-15,Consulting Services - Client 13,Consulting Services,income,4776.51
+2025-08-03,Cloud Infrastructure (AWS) Payment,Cloud Infrastructure (AWS),expense,1130.93
+2025-07-03,Consulting Services - Client 87,Consulting Services,income,1549.63
+2025-08-02,Office Supplies Payment,Office Supplies,expense,782.37
+2025-09-03,Legal Fees Payment,Legal Fees,expense,728.37
+2025-11-01,Software Licenses Payment,Software Licenses,expense,52.63
+2025-08-01,Marketing Ads Payment,Marketing Ads,expense,165.84
+2025-07-11,Employee Salaries Payment,Employee Salaries,expense,8500
+2025-11-14,Interest Income - Client 24,Interest Income,income,9498.89
+2025-09-03,Cloud Infrastructure (AWS) Payment,Cloud Infrastructure (AWS),expense,173.12
+2025-12-01,Subscription Fees - Client 76,Subscription Fees,income,4544.18
+2025-07-10,Office Supplies Payment,Office Supplies,expense,920.54
+2025-10-25,Interest Income - Client 48,Interest Income,income,1854.41
+2025-09-14,Employee Salaries Payment,Employee Salaries,expense,8500
+2025-10-23,Consulting Services - Client 70,Consulting Services,income,2486.75
+2025-11-01,Legal Fees Payment,Legal Fees,expense,385.89
+2025-10-24,Office Supplies Payment,Office Supplies,expense,612.03
+2025-06-20,Sales Revenue - Client 35,Sales Revenue,income,7824.28
+2025-07-30,Cloud Infrastructure (AWS) Payment,Cloud Infrastructure (AWS),expense,1690.39
+2025-06-28,Cloud Infrastructure (AWS) Payment,Cloud Infrastructure (AWS),expense,709.02
+2025-07-16,Interest Income - Client 9,Interest Income,income,4040.93
+2025-09-14,Interest Income - Client 5,Interest Income,income,14380.37
+2025-07-25,Legal Fees Payment,Legal Fees,expense,1377.51
+2025-07-14,Subscription Fees - Client 3,Subscription Fees,income,12151.34
+2025-08-08,Cloud Infrastructure (AWS) Payment,Cloud Infrastructure (AWS),expense,290.68
+2025-08-31,Cloud Infrastructure (AWS) Payment,Cloud Infrastructure (AWS),expense,1083.81
+2025-08-20,Cloud Infrastructure (AWS) Payment,Cloud Infrastructure (AWS),expense,1783.76
+2025-07-01,Marketing Ads Payment,Marketing Ads,expense,855.74
+2025-09-17,Subscription Fees - Client 79,Subscription Fees,income,12799
+2025-10-31,Marketing Ads Payment,Marketing Ads,expense,807.91
+2025-07-04,Consulting Services - Client 1,Consulting Services,income,1645.08
+2025-08-03,Marketing Ads Payment,Marketing Ads,expense,1199.54
+2025-10-26,Consulting Services - Client 67,Consulting Services,income,4783.77
+2025-10-25,Consulting Services - Client 86,Consulting Services,income,4822.95
+2025-07-28,Marketing Ads Payment,Marketing Ads,expense,928.11
+2025-06-19,Subscription Fees - Client 36,Subscription Fees,income,5193.08
+2025-07-04,Sales Revenue - Client 90,Sales Revenue,income,6208.58
+2025-07-12,Travel Expenses Payment,Travel Expenses,expense,1901.11
+2025-10-20,Employee Salaries Payment,Employee Salaries,expense,8500
+2025-11-19,Employee Salaries Payment,Employee Salaries,expense,8500
+2025-12-05,Interest Income - Client 68,Interest Income,income,10103.67
+2025-11-06,Office Supplies Payment,Office Supplies,expense,800.01
+2025-11-14,Sales Revenue - Client 8,Sales Revenue,income,6294
+2025-10-10,Subscription Fees - Client 74,Subscription Fees,income,2542.72
+2025-08-14,Cloud Infrastructure (AWS) Payment,Cloud Infrastructure (AWS),expense,713.98
+2025-07-27,Utilities Payment,Utilities,expense,549.84
+2025-08-17,Consulting Services - Client 70,Consulting Services,income,5080.67
+2025-08-26,Consulting Services - Client 97,Consulting Services,income,7597.09
+2025-10-16,Interest Income - Client 49,Interest Income,income,13113.04
+2025-07-20,Software Licenses Payment,Software Licenses,expense,670.16
+2025-07-13,Cloud Infrastructure (AWS) Payment,Cloud Infrastructure (AWS),expense,486.04
+2025-11-12,Marketing Ads Payment,Marketing Ads,expense,879.84
+2025-09-11,Interest Income - Client 93,Interest Income,income,4732.27
+2025-11-30,Sales Revenue - Client 18,Sales Revenue,income,5266.67
