@@ -1,5 +1,5 @@
 // Frontend API Service for AI Chat
-import api from '../lib/api';
+import api, { API_BASE_URL } from '../lib/api';
 
 export interface StreamChatOptions {
   message: string;
@@ -24,7 +24,7 @@ class AIService {
     const { message, userId, onChunk, onComplete, onError, financialContext } = options;
 
     try {
-      const response = await fetch('/api/ai/stream', {
+      const response = await fetch(`${API_BASE_URL}/ai/stream`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
