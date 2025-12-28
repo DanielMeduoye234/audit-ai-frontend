@@ -43,7 +43,7 @@ export function Sidebar() {
     <aside className="sidebar">
       <div className="sidebar-header">
         <div className="logo-icon">
-          <div className="logo-square"></div>
+          <img src="/logo.png" alt="AUDIT AI Logo" className="logo-img" />
         </div>
         <div className="logo-text">
           <h1>AUDIT AI</h1>
