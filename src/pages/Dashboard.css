@@ -495,17 +495,53 @@
 }
 
 @media (max-width: 768px) {
+  .dashboard {
+    gap: 1rem;
+  }
+
   .header-content {
     flex-direction: column;
     align-items: flex-start;
   }
 
+  .dashboard-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .metric-card {
+    min-height: auto;
+    padding: 1rem;
+  }
+
+  .metric-value {
+    font-size: 1.5rem;
+  }
+
+  .charts-section {
+    gap: 1rem;
+  }
+
   .side-charts {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .chart-container {
+    height: 250px;
   }
 
   .transactions-table {
     display: block;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .btn-primary {
+    width: 100%;
   }
 }

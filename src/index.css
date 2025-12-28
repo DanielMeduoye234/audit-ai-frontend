@@ -373,13 +373,21 @@
   padding: 0;
 }
 
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   min-height: 100vh;
+  min-height: 100dvh;
   background: linear-gradient(135deg, #0f111a 0%, #1a1d2d 50%, #0f111a 100%);
   background-attachment: fixed;
   color: var(--text-primary);
   position: relative;
-  overflow-x: hidden;
 }
 
 /* Animated background gradient */

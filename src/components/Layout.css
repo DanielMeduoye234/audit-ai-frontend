@@ -62,7 +62,10 @@
   .main-content {
     margin-left: 0;
     padding: 1rem;
-    padding-top: 80px; /* Offset for mobile header */
+    padding-top: 74px; /* Slightly adjusted offset */
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
   }
 
   .mobile-header {
