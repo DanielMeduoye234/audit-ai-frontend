@@ -14,6 +14,8 @@ export function Dashboard() {
   const { formatAmount } = useCurrency();
   const [recentTransactions, setRecentTransactions] = useState<any[]>([]);
   const [chartData, setChartData] = useState<any[]>([]);
+  const [briefing, setBriefing] = useState<any>(null);
+  const [runway, setRunway] = useState<any>(null);
   const [percentChanges, setPercentChanges] = useState({
     revenue: 0,
     expenses: 0,
@@ -61,8 +63,32 @@ export function Dashboard() {
         expenses: calcChange(thisWeekExpenses, lastWeekExpenses),
         profit: calcChange(thisWeekProfit, lastWeekProfit)
       });
+      });
     }
   }, [transactions]);
+
+  // Fetch Briefing and Runway
+  useEffect(() => {
+    const fetchData = async () => {
+        try {
+            // We need the user ID. For now, assuming it's available in local storage or context. 
+            // In a real app, use auth context.
+            const user = JSON.parse(localStorage.getItem('user') || '{}');
+            if (user.id) {
+                 const api = (await import('../lib/api')).default;
+                 
+                 const briefingRes = await api.get(`/analytics/briefing/${user.id}`);
+                 setBriefing(briefingRes.data.briefing);
+
+                 const runwayRes = await api.get(`/analytics/runway/${user.id}`);
+                 setRunway(runwayRes.data.runway);
+            }
+        } catch (error) {
+            console.error("Failed to fetch dashboard intelligence:", error);
+        }
+    };
+    fetchData();
+  }, []);
 
   const processChartData = (transactions: any[]) => {
     // Process Revenue Data (Area Chart)
@@ -120,7 +146,57 @@ export function Dashboard() {
             </button>
           </div>
         </div>
+        </div>
       </header>
+
+      {/* Morning CFO Briefing & Runway */}
+      {briefing && runway && (
+        <section className="intelligence-section">
+            <Card className="briefing-card">
+                <div className="briefing-header">
+                    <h2>{briefing.greeting}, User</h2>
+                    <span className="date-badge">{new Date(briefing.date).toLocaleDateString()}</span>
+                </div>
+                <div className="briefing-content">
+                    <div className="briefing-stat">
+                        <span className="label">Yesterday's Spend</span>
+                        <span className="value">{formatAmount(briefing.yesterday_spend)}</span>
+                        <span className={`diff ${briefing.spend_diff_percent > 0 ? 'negative' : 'positive'}`}>
+                             {briefing.spend_diff_percent > 0 ? '+' : ''}{briefing.spend_diff_percent}% vs avg
+                        </span>
+                    </div>
+                    <div className="vertical-divider"></div>
+                    <div className="briefing-insight">
+                        <span className="insight-icon">💡</span>
+                        <p>{briefing.insight}</p>
+                    </div>
+                </div>
+            </Card>
+
+            <Card className={`runway-card ${runway.status}`}>
+                 <div className="runway-header">
+                    <h3>Cash Runway</h3>
+                    {runway.status === 'infinite' ? (
+                        <span className="status-pill healthy">Healthy</span>
+                    ) : (
+                        <span className={`status-pill ${runway.status}`}>{runway.status}</span>
+                    )}
+                 </div>
+                 <div className="runway-metric">
+                    {runway.status === 'infinite' ? (
+                        <div className="metric-large">∞ Months</div>
+                    ) : (
+                        <div className="metric-large">{runway.runway_months} Months</div>
+                    )}
+                 </div>
+                 <p className="runway-desc">
+                    {runway.status === 'infinite' 
+                        ? 'Your business is profitable! 🚀' 
+                        : `Projected cash out: ${runway.projected_zero_date}`}
+                 </p>
+            </Card>
+        </section>
+      )}
 
       <section className="metrics-grid">
         <div className="metric-card">
