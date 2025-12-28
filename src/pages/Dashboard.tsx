@@ -63,7 +63,6 @@ export function Dashboard() {
         expenses: calcChange(thisWeekExpenses, lastWeekExpenses),
         profit: calcChange(thisWeekProfit, lastWeekProfit)
       });
-
     }
   }, [transactions]);
 
@@ -146,7 +145,7 @@ export function Dashboard() {
             </button>
           </div>
         </div>
-        </div>
+
       </header>
 
       {/* Morning CFO Briefing & Runway */}
