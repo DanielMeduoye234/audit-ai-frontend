@@ -1,4 +1,4 @@
-import { LayoutDashboard, Receipt, FileText, Settings, BarChart3, User, Sparkles, Bell, MessageSquareWarning, LogOut, MessageSquare } from 'lucide-react';
+import { LayoutDashboard, Receipt, FileText, Settings, BarChart3, User, Sparkles, Bell, LogOut } from 'lucide-react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';

@@ -132,7 +132,7 @@ export function Profile() {
 
   // Format activity action based on log data
   const formatActivityAction = (log: any): string => {
-    const { action, entity_type, details } = log;
+    const { action, entity_type } = log;
     
     if (action === 'create' && entity_type === 'transaction') {
       return 'Created a new transaction';
