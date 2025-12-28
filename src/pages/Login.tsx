@@ -84,50 +84,6 @@ export function Login() {
             {!loading && <ArrowRight size={20} />}
           </button>
           
-          <button 
-            type="button" 
-            onClick={async () => {
-              if (confirm('Clear all stored data? This will log you out.')) {
-                try {
-                  // Import supabase
-                  const { supabase } = await import('../lib/supabase');
-                  
-                  // Sign out from Supabase first
-                  await supabase.auth.signOut();
-                  
-                  // Clear all storage
-                  localStorage.clear();
-                  sessionStorage.clear();
-                  
-                  // Clear IndexedDB
-                  const dbs = await indexedDB.databases();
-                  for (const db of dbs) {
-                    if (db.name) {
-                      indexedDB.deleteDatabase(db.name);
-                    }
-                  }
-                  
-                  // Reload after a delay
-                  setTimeout(() => window.location.reload(), 1000);
-                } catch (error) {
-                  console.error('Clear error:', error);
-                  alert('Error clearing storage. Please try again.');
-                }
-              }
-            }}
-            style={{
-              marginTop: '10px',
-              padding: '8px 16px',
-              background: '#ef4444',
-              color: 'white',
-              border: 'none',
-              borderRadius: '6px',
-              cursor: 'pointer',
-              fontSize: '14px'
-            }}
-          >
-            🧹 Clear Corrupted Session
-          </button>
         </form>
 
         <div className="auth-footer">

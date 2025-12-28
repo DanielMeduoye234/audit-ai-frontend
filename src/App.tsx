@@ -4,7 +4,6 @@ import { useAuth } from './contexts/AuthContext';
 
 import { Layout } from './components/Layout';
 import { ProtectedRoute } from './components/ProtectedRoute';
-import { MobileBlocker } from './components/MobileBlocker';
 
 import { Dashboard } from './pages/Dashboard';
 import { Transactions } from './pages/Transactions';
@@ -36,10 +35,9 @@ function App() {
   }, [user]);
 
   return (
-    <MobileBlocker>
-      <Router>
-        <TransactionProvider>
-          <Routes>
+    <Router>
+      <TransactionProvider>
+        <Routes>
 
             {/* Onboarding */}
           <Route
@@ -171,9 +169,8 @@ function App() {
 
           <Route path="/diagnostics" element={<SupabaseDiagnostics />} />
           </Routes>
-        </TransactionProvider>
-      </Router>
-    </MobileBlocker>
+      </TransactionProvider>
+    </Router>
   );
 }
 
