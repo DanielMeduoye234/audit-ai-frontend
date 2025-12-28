@@ -63,7 +63,7 @@ export function Dashboard() {
         expenses: calcChange(thisWeekExpenses, lastWeekExpenses),
         profit: calcChange(thisWeekProfit, lastWeekProfit)
       });
-      });
+
     }
   }, [transactions]);
 
