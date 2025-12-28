@@ -176,6 +176,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem 1rem;
 }
 
 .stat-item {
@@ -368,12 +370,17 @@
 }
 
 @media (max-width: 768px) {
+  .profile-content-wrapper {
+    padding: 0 1rem 3rem;
+  }
+
   .profile-header {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-top: 100px;
-    gap: 2rem;
+    padding-top: 80px;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   .profile-header-content {
@@ -382,20 +389,63 @@
     gap: 1rem;
   }
 
+  .avatar-wrapper {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-name-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .profile-name-row h2 {
+    font-size: 1.5rem;
+  }
+
+  .profile-title-section {
+    padding-bottom: 0;
+  }
+
+  .profile-grid {
+    gap: 1.5rem;
+  }
+
   .profile-left-col {
     flex-direction: column;
   }
 
+  .stats-card {
+    padding: 1.5rem;
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    justify-items: center;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
   .form-row {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .btn-logout {
     width: 100%;
     justify-content: center;
+    margin-bottom: 0;
   }
 
   .btn-save {
     width: 100%;
+  }
+
+  .form-card {
+    padding: 1.5rem;
   }
 }
