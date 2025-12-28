@@ -196,3 +196,13 @@
     padding: 1rem;
   }
 }
+
+@media (max-width: 480px) {
+  .kpi-grid {
+    gap: 0.75rem;
+  }
+
+  .charts-grid {
+    gap: 0.75rem;
+  }
+}

@@ -72,3 +72,14 @@
     display: flex;
   }
 }
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 0.75rem;
+    padding-top: 74px;
+  }
+
+  .mobile-header {
+    padding: 0 1rem;
+  }
+}
