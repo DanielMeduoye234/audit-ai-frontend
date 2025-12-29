@@ -18,6 +18,7 @@ import { Register } from './pages/Register';
 import { Notifications } from './pages/Notifications';
 import { Complaint } from './pages/Complaint';
 import Feedback from './pages/Feedback';
+import { AdminDashboard } from './pages/AdminDashboard';
 
 import { TransactionProvider } from './contexts/TransactionContext';
 import { SupabaseDiagnostics } from './components/SupabaseDiagnostics';
@@ -162,6 +163,17 @@ function App() {
               <ProtectedRoute>
                 <Layout>
                   <Settings />
+                </Layout>
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <Layout>
+                  <AdminDashboard />
                 </Layout>
               </ProtectedRoute>
             }
