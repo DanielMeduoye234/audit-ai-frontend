@@ -82,9 +82,9 @@ export function Profile() {
         location: localData.location || prev.location
       }));
     } else {
-      // Fallback to auth metadata for new users
-      const metadata = user.user_metadata || {};
-      const fullName = metadata.full_name || '';
+      // Fallback to auth data for new users
+      // Local Auth User has name and company directly
+      const fullName = user.name || '';
       const [firstName, ...lastNameParts] = fullName.split(' ');
       const lastName = lastNameParts.join(' ');
       
@@ -93,10 +93,10 @@ export function Profile() {
         firstName: firstName || '',
         lastName: lastName || '',
         email: user.email || '',
-        company: metadata.organization_name || '',
-        role: metadata.role || 'Financial Controller',
-        phone: metadata.phone || prev.phone,
-        location: metadata.location || prev.location
+        company: user.company || '',
+        role: 'Financial Controller', // Default role for local auth
+        phone: prev.phone,
+        location: prev.location
       }));
     }
   }, [user]);
