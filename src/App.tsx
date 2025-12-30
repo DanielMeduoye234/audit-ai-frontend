@@ -1,4 +1,4 @@
-// Deployment trigger: 2025-12-30
+// Deployment trigger: 2025-12-30 (Final V2)
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from './contexts/AuthContext';
