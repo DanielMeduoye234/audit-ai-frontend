@@ -55,17 +55,17 @@ export function AIChat() {
       const history = await aiService.getHistory(userId);
       if (history && history.length > 0) {
         const formattedMessages: Message[] = history.map((msg: any, index: number) => ({
-          id: index + 1,
+          id: msg.id || Date.now() + index, // Use DB id if available, fallback to unique timestamp
           text: msg.parts,
           sender: msg.role === 'model' ? 'ai' : 'user',
-          timestamp: new Date() // In a real app, use actual timestamp from DB
+          timestamp: msg.timestamp ? new Date(msg.timestamp) : new Date()
         }));
         setMessages(formattedMessages);
       } else {
         // Welcome message if no history
         const welcomeMessage: Message = {
-          id: 1,
-          text: `Hello! I'm your AI Accountant with real-time access to your organization's data. I can see that your current revenue is $${metrics.revenue.toLocaleString()} and expenses are $${metrics.expenses.toLocaleString()}. I can also speak to you - just enable voice mode! What would you like to know?`,
+          id: Date.now(),
+          text: `Hello! I'm your AI Accountant with real-time access to your organization's data. I can see that your current revenue is $${metrics.revenue.toLocaleString()} and expenses are $${metrics.expenses.toLocaleString()}. I am a smart CFO and can help with taxes, audits, and financial planning. What would you like to know?`,
           sender: 'ai',
           timestamp: new Date(),
         };
@@ -258,7 +258,7 @@ export function AIChat() {
     if ((!inputValue.trim() && !selectedImage && !selectedDocument) || !userId) return;
 
     const userMessage: Message = {
-      id: messages.length + 1,
+      id: Date.now(),
       text: inputValue || (selectedImage ? '📎 Uploaded image' : '') || (selectedDocument ? `📎 Analyzed ${selectedDocument.name}` : ''),
       sender: 'user',
       timestamp: new Date(),
@@ -267,13 +267,15 @@ export function AIChat() {
 
     const currentInput = inputValue;
     const currentImage = selectedImage;
-    setMessages([...messages, userMessage]);
+    const aiMessageId = Date.now() + 1; // Unique ID for AI message
+
+    // Optimistically update messages
+    setMessages(prev => [...prev, userMessage]);
     setInputValue('');
     setSelectedImage(null);
     setIsTyping(true);
 
     // Create a placeholder AI message that will be updated with streaming content
-    const aiMessageId = messages.length + 2;
     const aiMessage: Message = {
       id: aiMessageId,
       text: '',
@@ -427,8 +429,11 @@ export function AIChat() {
             <Sparkles size={24} />
           </div>
           <div>
-            <h2>AI Accountant</h2>
-            <p className="text-secondary">Expert-level accounting knowledge at your fingertips</p>
+            <div className="flex items-center gap-2">
+              <h2>Audit AI Accountant</h2>
+              <span className="px-1.5 py-0.5 bg-blue-500/10 text-blue-400 text-[10px] font-bold uppercase tracking-wider rounded border border-blue-500/20">Super-Powered</span>
+            </div>
+            <p className="text-secondary">Connected to organization data • Strategic CFO Mode</p>
           </div>
         </div>
         <div className="header-controls">
