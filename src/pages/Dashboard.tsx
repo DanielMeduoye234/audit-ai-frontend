@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card } from '../components/Card';
+import { OnboardingTour } from '../components/OnboardingTour';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from 'recharts';
 import { ArrowUpRight, ArrowDownRight, DollarSign, CreditCard, Activity, TrendingUp, Download } from 'lucide-react';
 import './Dashboard.css';
@@ -16,6 +17,7 @@ export function Dashboard() {
   const [chartData, setChartData] = useState<any[]>([]);
   const [briefing, setBriefing] = useState<any>(null);
   const [runway, setRunway] = useState<any>(null);
+  const [runTour, setRunTour] = useState(false);
   const [percentChanges, setPercentChanges] = useState({
     revenue: 0,
     expenses: 0,
@@ -130,8 +132,17 @@ export function Dashboard() {
     return value > 0 ? 'positive' : 'negative';
   };
 
+  // Check if user should see onboarding tour
+  useEffect(() => {
+    const hasCompletedTour = localStorage.getItem('onboardingCompleted');
+    if (!hasCompletedTour) {
+      setRunTour(true);
+    }
+  }, []);
+
   return (
     <div className="dashboard">
+      <OnboardingTour run={runTour} onComplete={() => setRunTour(false)} />
       <header className="dashboard-header">
         <div className="header-content">
           <div>

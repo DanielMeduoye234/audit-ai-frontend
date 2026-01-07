@@ -1,0 +1,156 @@
+/* Onboarding Tour Styles */
+
+/* Welcome and Complete screens */
+.tour-welcome,
+.tour-complete {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.tour-welcome h2,
+.tour-complete h2 {
+  color: #f1f5f9;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tour-welcome p,
+.tour-complete p {
+  color: #cbd5e1;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.tour-duration {
+  color: #94a3b8 !important;
+  font-size: 13px !important;
+  font-style: italic;
+  margin-top: 12px !important;
+}
+
+.tour-tip {
+  background: rgba(59, 130, 246, 0.1);
+  border-left: 3px solid #3b82f6;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 16px !important;
+  font-size: 14px !important;
+}
+
+/* Tour step content */
+.__floater__open h3 {
+  color: #f1f5f9;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+
+.__floater__open p {
+  color: #cbd5e1;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.__floater__open p:last-child {
+  margin-bottom: 0;
+}
+
+/* Joyride overlay customization */
+.react-joyride__overlay {
+  backdrop-filter: blur(2px);
+}
+
+/* Spotlight effect */
+.react-joyride__spotlight {
+  border-radius: 12px;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.7);
+}
+
+/* Tooltip arrow */
+.__floater__arrow {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+/* Button hover states */
+button[data-action="primary"]:hover {
+  background-color: #2563eb !important;
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+button[data-action="back"]:hover,
+button[data-action="skip"]:hover {
+  color: #e2e8f0 !important;
+  transition: all 0.2s ease;
+}
+
+/* Progress indicator */
+.__floater__body {
+  position: relative;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.__floater__open {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .tour-welcome h2,
+  .tour-complete h2 {
+    font-size: 20px;
+  }
+
+  .tour-welcome p,
+  .tour-complete p {
+    font-size: 14px;
+  }
+
+  .__floater__open h3 {
+    font-size: 16px;
+  }
+
+  .__floater__open p {
+    font-size: 13px;
+  }
+}
+
+/* Dark theme enhancements */
+.react-joyride__tooltip {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5),
+    0 10px 10px -5px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(59, 130, 246, 0.1);
+}
+
+/* Glassmorphism effect for tooltip */
+.react-joyride__tooltip::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  pointer-events: none;
+}

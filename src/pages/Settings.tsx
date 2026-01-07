@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Card } from '../components/Card';
-import { Bell, Shield, Database, Mail, Lock, Download, ChevronRight, Sun, Moon, DollarSign, Globe } from 'lucide-react';
+import { Bell, Shield, Database, Mail, Lock, Download, ChevronRight, Sun, Moon, DollarSign, Globe, HelpCircle } from 'lucide-react';
 import { useCurrency, CURRENCIES } from '../contexts/CurrencyContext';
 import './Settings.css';
 
@@ -78,6 +78,11 @@ export function Settings() {
     if (selected) {
       setCurrency(selected);
     }
+  };
+
+  const handleRestartTour = () => {
+    localStorage.removeItem('onboardingCompleted');
+    alert('Onboarding tour reset! Navigate to the Dashboard to start the tour again.');
   };
 
   return (
@@ -343,6 +348,19 @@ export function Settings() {
                   <option selected>5 Years</option>
                   <option>7 Years</option>
                 </select>
+              </div>
+
+              <div className="setting-item">
+                <div className="setting-info">
+                  <div className="setting-icon">
+                    <HelpCircle size={20} />
+                  </div>
+                  <div>
+                    <h4>Restart Onboarding Tour</h4>
+                    <p className="text-secondary">Take the guided tour again to learn about AUDIT AI features</p>
+                  </div>
+                </div>
+                <button className="btn-secondary" onClick={handleRestartTour}>Restart Tour</button>
               </div>
             </Card>
           </section>
