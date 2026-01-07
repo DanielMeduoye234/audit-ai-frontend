@@ -1,4 +1,4 @@
-import { LayoutDashboard, Receipt, FileText, Settings, BarChart3, User, Sparkles, Bell, LogOut, X } from 'lucide-react';
+import { LayoutDashboard, Receipt, FileText, Settings, BarChart3, User, Sparkles, Bell, LogOut, X, Shield } from 'lucide-react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
@@ -122,6 +122,15 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
               <NavLink to="/settings" className={({ isActive }) => isActive ? 'active' : ''} onClick={onClose}>
                 <Settings size={20} />
                 <span>Settings</span>
+              </NavLink>
+            </li>
+            {/* Admin link - only visible if user has admin role or for development */}
+            <li>
+              <NavLink to="/admin" className={({ isActive }) => isActive ? 'active' : ''} onClick={onClose}>
+                <div className="flex items-center gap-2">
+                  <Shield size={20} className="text-blue-400" />
+                  <span className="font-bold text-blue-400">Admin Console</span>
+                </div>
               </NavLink>
             </li>
           </ul>

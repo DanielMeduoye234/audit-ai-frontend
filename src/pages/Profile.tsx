@@ -25,13 +25,14 @@ export function Profile() {
   const [isLoadingActivity, setIsLoadingActivity] = useState(true);
   
   const [userData, setUserData] = useState({
-    firstName: '',
-    lastName: '',
+    businessName: '',
+    industry: '',
+    taxId: '',
+    registrationNumber: '',
     email: '',
-    company: '',
-    role: '',
     phone: '+1 (555) 123-4567',
-    location: 'New York, NY'
+    businessAddress: '',
+    contactPerson: ''
   });
 
   const [stats, setStats] = useState({
@@ -73,30 +74,27 @@ export function Profile() {
       const localData = JSON.parse(savedProfile);
       setUserData(prev => ({
         ...prev,
-        firstName: localData.firstName || '',
-        lastName: localData.lastName || '',
+        businessName: localData.businessName || user.company || '',
+        industry: localData.industry || '',
+        taxId: localData.taxId || '',
+        registrationNumber: localData.registrationNumber || '',
         email: user.email || '',
-        company: localData.company || '',
-        role: localData.role || 'Financial Controller',
         phone: localData.phone || prev.phone,
-        location: localData.location || prev.location
+        businessAddress: localData.businessAddress || '',
+        contactPerson: localData.contactPerson || user.name || ''
       }));
     } else {
       // Fallback to auth data for new users
-      // Local Auth User has name and company directly
-      const fullName = user.name || '';
-      const [firstName, ...lastNameParts] = fullName.split(' ');
-      const lastName = lastNameParts.join(' ');
-      
       setUserData(prev => ({
         ...prev,
-        firstName: firstName || '',
-        lastName: lastName || '',
+        businessName: user.company || '',
+        industry: '',
+        taxId: '',
+        registrationNumber: '',
         email: user.email || '',
-        company: user.company || '',
-        role: 'Financial Controller', // Default role for local auth
         phone: prev.phone,
-        location: prev.location
+        businessAddress: '',
+        contactPerson: user.name || ''
       }));
     }
   }, [user]);
@@ -233,12 +231,13 @@ export function Profile() {
     setIsSaving(true);
     
     const profileData = {
-      firstName: userData.firstName,
-      lastName: userData.lastName,
-      company: userData.company,
-      role: userData.role,
+      businessName: userData.businessName,
+      industry: userData.industry,
+      taxId: userData.taxId,
+      registrationNumber: userData.registrationNumber,
       phone: userData.phone,
-      location: userData.location
+      businessAddress: userData.businessAddress,
+      contactPerson: userData.contactPerson
     };
     
     // Try Supabase first, but always save to localStorage as backup
@@ -248,12 +247,13 @@ export function Profile() {
           .from('profiles')
           .update({
             id: user.id,
-            first_name: userData.firstName,
-            last_name: userData.lastName,
-            company: userData.company,
-            role: userData.role,
+            business_name: userData.businessName,
+            industry: userData.industry,
+            tax_id: userData.taxId,
+            registration_number: userData.registrationNumber,
             phone: userData.phone,
-            location: userData.location,
+            business_address: userData.businessAddress,
+            contact_person: userData.contactPerson,
             updated_at: new Date().toISOString()
           })
           .eq('id', user.id);
@@ -266,7 +266,7 @@ export function Profile() {
     localStorage.setItem('userProfile', JSON.stringify(profileData));
     
     setIsSaving(false);
-    alert('Profile updated successfully!');
+    alert('Business profile updated successfully!');
   };
 
   return (
@@ -306,13 +306,11 @@ export function Profile() {
             <div className="profile-title-section">
               <div className="profile-name-row">
                 <h2>
-                  {(userData.firstName || userData.lastName) 
-                    ? `${userData.firstName} ${userData.lastName}`.trim() 
-                    : userData.email}
+                  {userData.businessName || userData.email}
                 </h2>
-                <span className="role-badge">Admin</span>
+                <span className="role-badge">Business Account</span>
               </div>
-              <p className="text-secondary">{userData.role} at {userData.company}</p>
+              <p className="text-secondary">{userData.industry || 'Business'} • {userData.contactPerson || 'Contact Person'}</p>
             </div>
           </div>
 
@@ -376,35 +374,63 @@ export function Profile() {
 
           <div className="profile-right-col">
             <Card className="form-card">
-              <h3>Personal Information</h3>
+              <h3>Business Information</h3>
               <form className="profile-form" onSubmit={handleSaveProfile}>
+                <div className="form-group">
+                  <label>Business Name</label>
+                  <div className="input-wrapper">
+                    <Building size={18} />
+                    <input 
+                      type="text" 
+                      value={userData.businessName}
+                      onChange={(e) => handleInputChange(e, 'businessName')}
+                      placeholder="Enter your business name"
+                    />
+                  </div>
+                </div>
+
                 <div className="form-row">
                   <div className="form-group">
-                    <label>First Name</label>
+                    <label>Industry</label>
                     <div className="input-wrapper">
-                      <User size={18} />
+                      <Activity size={18} />
                       <input 
                         type="text" 
-                        value={userData.firstName}
-                        onChange={(e) => handleInputChange(e, 'firstName')}
+                        value={userData.industry}
+                        onChange={(e) => handleInputChange(e, 'industry')}
+                        placeholder="e.g., Technology, Retail, Healthcare"
                       />
                     </div>
                   </div>
                   <div className="form-group">
-                    <label>Last Name</label>
+                    <label>Tax ID / EIN</label>
                     <div className="input-wrapper">
-                      <User size={18} />
+                      <Shield size={18} />
                       <input 
                         type="text" 
-                        value={userData.lastName}
-                        onChange={(e) => handleInputChange(e, 'lastName')}
+                        value={userData.taxId}
+                        onChange={(e) => handleInputChange(e, 'taxId')}
+                        placeholder="XX-XXXXXXX"
                       />
                     </div>
                   </div>
                 </div>
 
                 <div className="form-group">
-                  <label>Email Address</label>
+                  <label>Business Registration Number</label>
+                  <div className="input-wrapper">
+                    <Shield size={18} />
+                    <input 
+                      type="text" 
+                      value={userData.registrationNumber}
+                      onChange={(e) => handleInputChange(e, 'registrationNumber')}
+                      placeholder="Enter registration number"
+                    />
+                  </div>
+                </div>
+
+                <div className="form-group">
+                  <label>Business Email</label>
                   <div className="input-wrapper">
                     <Mail size={18} />
                     <input 
@@ -417,50 +443,40 @@ export function Profile() {
                 </div>
 
                 <div className="form-group">
-                  <label>Phone Number</label>
+                  <label>Business Phone</label>
                   <div className="input-wrapper">
                     <Phone size={18} />
                     <input 
                       type="tel" 
                       value={userData.phone}
                       onChange={(e) => handleInputChange(e, 'phone')}
+                      placeholder="+1 (555) 123-4567"
                     />
                   </div>
                 </div>
 
-                <div className="form-row">
-                  <div className="form-group">
-                    <label>Company</label>
-                    <div className="input-wrapper">
-                      <Building size={18} />
-                      <input 
-                        type="text" 
-                        value={userData.company}
-                        onChange={(e) => handleInputChange(e, 'company')}
-                      />
-                    </div>
-                  </div>
-                  <div className="form-group">
-                    <label>Job Title</label>
-                    <div className="input-wrapper">
-                      <User size={18} />
-                      <input 
-                        type="text" 
-                        value={userData.role}
-                        onChange={(e) => handleInputChange(e, 'role')}
-                      />
-                    </div>
-                  </div>
-                </div>
-
                 <div className="form-group">
-                  <label>Location</label>
+                  <label>Business Address</label>
                   <div className="input-wrapper">
                     <MapPin size={18} />
                     <input 
                       type="text" 
-                      value={userData.location}
-                      onChange={(e) => handleInputChange(e, 'location')}
+                      value={userData.businessAddress}
+                      onChange={(e) => handleInputChange(e, 'businessAddress')}
+                      placeholder="Street, City, State, ZIP"
+                    />
+                  </div>
+                </div>
+
+                <div className="form-group">
+                  <label>Contact Person</label>
+                  <div className="input-wrapper">
+                    <User size={18} />
+                    <input 
+                      type="text" 
+                      value={userData.contactPerson}
+                      onChange={(e) => handleInputChange(e, 'contactPerson')}
+                      placeholder="Primary contact name"
                     />
                   </div>
                 </div>
